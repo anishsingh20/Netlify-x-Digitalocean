@@ -1,0 +1,18 @@
+{
+  "name": "netlify-x-do",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",  
+    "build": "npx eleventy && npx netlify-lambda build functions"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "mongodb": "^6.12.0",
+    "netlify-lambda": "^0.4.0"
+  }
+}

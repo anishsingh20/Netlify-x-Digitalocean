@@ -1,0 +1,17 @@
+name: do-netlify-mongo-demo  
+region: nyc  
+static_sites:  
+  - name: frontend  
+    github:  
+      branch: main  
+      deploy_on_push: true  
+    source_dir: /  
+    output_dir: _site  
+    routes:  
+      - path: /  
+functions:  
+  - name: messages  
+    source_dir: functions  
+    runtime: nodejs  
+    routes:  
+      - path: /.netlify/functions/messages  
