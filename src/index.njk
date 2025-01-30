@@ -1,0 +1,19 @@
+<!-- Display data from MongoDB -->  
+---  
+layout: layout.njk  
+title: DO + Netlify + MongoDB  
+---  
+
+<h1>Messages from MongoDB</h1>  
+<ul id="messages"></ul>  
+
+<script>  
+  fetch('/.netlify/functions/messages')  
+    .then(res => res.json())  
+    .then(data => {  
+      const list = document.getElementById('messages');  
+      data.forEach(msg => {  
+        list.innerHTML += `<li>${msg.text}</li>`;  
+      });  
+    });  
+</script>  
